@@ -15,6 +15,9 @@ describe('webdriveruniversity - contact us page', () => {
         await lastName.setValue('Blogs');
         await emailAddress.setValue('joe_blogs123@mail.com');
         await message.setValue('Hello, how are you?');
+
+
+        // await browser.debug();
         await submitButton.click();
 
         const successSubmissionHeader = $('#contact_reply > h1');

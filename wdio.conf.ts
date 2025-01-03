@@ -23,11 +23,11 @@ export const config: WebdriverIO.Config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './test/specs/**/locating-elements.spec.ts'
+        './test/specs/**/contact-us.spec.ts'
     ],
     // Patterns to exclude.
     exclude: [
-        './test/specs/mocha-example.ts'
+        // './test/specs/mocha-example.ts'
     ],
     //
     // ============
@@ -62,7 +62,7 @@ export const config: WebdriverIO.Config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'error',
+    logLevel: 'info',
     //
     // Set specific log levels per logger
     // loggers:
@@ -125,7 +125,7 @@ export const config: WebdriverIO.Config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec','html-nice'],
+    reporters: ['spec'],
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -186,7 +186,8 @@ export const config: WebdriverIO.Config = {
      * @param {Array.<String>} specs        List of spec file paths that are to be run
      * @param {object}         browser      instance of created browser/device session
      */
-    // before: function (capabilities, specs) {
+    // before: async function (capabilities, specs) {
+    //     (await import('expect-webdriverio')).setOptions({ wait:10000, interval: 500 });
     // },
     /**
      * Runs before a WebdriverIO command gets executed.
